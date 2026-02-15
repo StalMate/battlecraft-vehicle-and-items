@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "battlecraftvehicleanitem:block/vehicle_spawn_block"
+    }
+  }
+}

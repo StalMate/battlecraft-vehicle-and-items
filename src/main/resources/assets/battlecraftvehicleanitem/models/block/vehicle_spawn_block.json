@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "battlecraftvehicleanitem:block/vehicle_spawn_block"
+  }
+}
