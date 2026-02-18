@@ -11,8 +11,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.BlockGetter;
 
-import com.battlecraft.vehicleanditems.entity.VehicleSpawnBlockEntity;
+import com.battlecraft.vehicleanditems.entity.blocks.VehicleSpawnBlockEntity;
 
 public class VehicleSpawnBlock extends BaseEntityBlock {
     public VehicleSpawnBlock(Properties properties) {
@@ -32,13 +33,6 @@ public class VehicleSpawnBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!level.isClientSide) {
-            BlockEntity be = level.getBlockEntity(pos);
-            if (be instanceof VehicleSpawnBlockEntity vehicleBE) {
-                vehicleBE.triggerOpenAnimation();
-            }
-        }
-
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
@@ -48,5 +42,15 @@ public class VehicleSpawnBlock extends BaseEntityBlock {
             level.removeBlockEntity(pos);
         }
         super.onRemove(state, level, pos, newState, moved);
+    }
+
+    @Override
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
+        return true;
+    }
+
+    @Override
+    public int getLightBlock(BlockState state, BlockGetter level, BlockPos pos) {
+        return 0;
     }
 }

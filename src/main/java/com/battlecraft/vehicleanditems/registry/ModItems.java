@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import com.battlecraft.vehicleanditems.BattlecraftVehicleAndItems;
+import com.battlecraft.vehicleanditems.items.VehicleSpawnBlockItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(
@@ -16,7 +17,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> VEHICLE_SPAWN_BLOCK_ITEM = ITEMS.register(
             "test_vehicle_spawn_block",
-            () -> new BlockItem(ModBlocks.VEHICLE_SPAWN_BLOCK.get(), new Item.Properties()
+            () -> new VehicleSpawnBlockItem(new Item.Properties()
                     .stacksTo(64)
                     .fireResistant()
             )

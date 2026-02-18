@@ -6,7 +6,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import com.battlecraft.vehicleanditems.BattlecraftVehicleAndItems;
-import com.battlecraft.vehicleanditems.entity.VehicleSpawnBlockEntity;
+import com.battlecraft.vehicleanditems.entity.blocks.VehicleSpawnBlockEntity;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(

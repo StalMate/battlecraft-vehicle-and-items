@@ -21,7 +21,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 @Mod(BattlecraftVehicleAndItems.MOD_ID)
 public class BattlecraftVehicleAndItems {
-    public static final String MOD_ID = "battlecraftvehicleanitems";
+    public static final String MOD_ID = "battlecraftvehicleanditems";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public BattlecraftVehicleAndItems() {

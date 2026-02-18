@@ -21,13 +21,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> VEHICLE_SPAWN_BLOCK = BLOCKS.register(
             "test_vehicle_spawn_block",
             () -> new VehicleSpawnBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.STONE)
                     .strength(3.0f, 6.0f)
                     .sound(SoundType.METAL)
-                    .lightLevel(state -> 7)
-                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 0)
                     .pushReaction(PushReaction.BLOCK)
-                    .friction(0.8f)
             )
     );
 }

@@ -1,7 +1,7 @@
-package com.battlecraft.vehicleanditems.models;
+package com.battlecraft.vehicleanditems.models.blocks;
 
 import com.battlecraft.vehicleanditems.BattlecraftVehicleAndItems;
-import com.battlecraft.vehicleanditems.entity.VehicleSpawnBlockEntity;
+import com.battlecraft.vehicleanditems.entity.blocks.VehicleSpawnBlockEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 
@@ -9,7 +9,7 @@ public class VehicleSpawnBlockModel extends GeoModel<VehicleSpawnBlockEntity> {
 
     @Override
     public ResourceLocation getModelResource(VehicleSpawnBlockEntity object) {
-        return new ResourceLocation(BattlecraftVehicleAndItems.MOD_ID, "geo/block/vehicle_spawn_block.geo.json");
+        return new ResourceLocation (BattlecraftVehicleAndItems.MOD_ID, "geo/block/vehicle_spawn_block.geo.json");
     }
 
     @Override
