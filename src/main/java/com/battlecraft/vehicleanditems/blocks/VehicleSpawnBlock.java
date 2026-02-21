@@ -12,10 +12,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.world.level.BlockGetter;
-
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import com.battlecraft.vehicleanditems.registry.ModBlockEntities;
 import com.battlecraft.vehicleanditems.entity.blocks.VehicleSpawnBlockEntity;
 
 public class VehicleSpawnBlock extends BaseEntityBlock {
+
     public VehicleSpawnBlock(Properties properties) {
         super(properties);
     }
@@ -52,5 +55,13 @@ public class VehicleSpawnBlock extends BaseEntityBlock {
     @Override
     public int getLightBlock(BlockState state, BlockGetter level, BlockPos pos) {
         return 0;
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return createTickerHelper(type,
+                ModBlockEntities.VEHICLE_SPAWN_BLOCK_ENTITY.get(),
+                VehicleSpawnBlockEntity::tick);
     }
 }
