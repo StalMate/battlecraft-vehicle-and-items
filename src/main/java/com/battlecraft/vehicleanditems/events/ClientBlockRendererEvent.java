@@ -14,6 +14,6 @@ public class ClientBlockRendererEvent {
 
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlockEntities.VEHICLE_SPAWN_BLOCK_ENTITY.get(), VehicleSpawnBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.EXAMPLE_VEHICLE_SPAWN_BLOCK_ENTITY.get(), VehicleSpawnBlockRenderer::new);
     }
 }

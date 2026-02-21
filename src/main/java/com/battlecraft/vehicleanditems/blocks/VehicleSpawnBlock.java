@@ -61,7 +61,7 @@ public class VehicleSpawnBlock extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         return createTickerHelper(type,
-                ModBlockEntities.VEHICLE_SPAWN_BLOCK_ENTITY.get(),
+                ModBlockEntities.EXAMPLE_VEHICLE_SPAWN_BLOCK_ENTITY.get(),
                 VehicleSpawnBlockEntity::tick);
     }
 }

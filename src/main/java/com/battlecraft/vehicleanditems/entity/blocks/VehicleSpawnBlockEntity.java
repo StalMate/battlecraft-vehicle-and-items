@@ -21,7 +21,7 @@ public class VehicleSpawnBlockEntity extends BlockEntity implements GeoBlockEnti
     private final ProgressBarComponent progressBar = new ProgressBarComponent(200);
 
     public VehicleSpawnBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.VEHICLE_SPAWN_BLOCK_ENTITY.get(), pos, state);
+        super(ModBlockEntities.EXAMPLE_VEHICLE_SPAWN_BLOCK_ENTITY.get(), pos, state);
     }
 
     //GeoBlockEntity
