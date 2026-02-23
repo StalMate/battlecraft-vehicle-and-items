@@ -14,8 +14,10 @@ import org.jetbrains.annotations.Nullable;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+
 import com.battlecraft.vehicleanditems.registry.ModBlockEntities;
 import com.battlecraft.vehicleanditems.entity.blocks.VehicleSpawnBlockEntity;
+import com.battlecraft.vehicleanditems.sound.LoopingSound;
 
 public class VehicleSpawnBlock extends BaseEntityBlock {
 
@@ -34,13 +36,29 @@ public class VehicleSpawnBlock extends BaseEntityBlock {
         return new VehicleSpawnBlockEntity(pos, state);
     }
 
+    //Все обрабатывать на сервере. Ничего на клиенте!
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        if (level.isClientSide) return InteractionResult.SUCCESS;
+        if (hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) return InteractionResult.PASS;
+
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity instanceof VehicleSpawnBlockEntity vehicleBlock) {
+            if (!vehicleBlock.getProgressBar().isInit()) { // только если прогресс ещё не стартовал
+                vehicleBlock.getProgressBar().init(level);
+                vehicleBlock.setChanged();
+                level.sendBlockUpdated(pos, state, state, 3);
+            }
+        }
+
+        return InteractionResult.SUCCESS;
     }
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
+        if (level.isClientSide) {
+            LoopingSound.stop(pos);
+        }
         if (!state.is(newState.getBlock())) {
             level.removeBlockEntity(pos);
         }
@@ -61,7 +79,7 @@ public class VehicleSpawnBlock extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         return createTickerHelper(type,
-                ModBlockEntities.EXAMPLE_VEHICLE_SPAWN_BLOCK_ENTITY.get(),
+                ModBlockEntities.VEHICLE_SPAWN_BLOCK_ENTITY.get(),
                 VehicleSpawnBlockEntity::tick);
     }
 }

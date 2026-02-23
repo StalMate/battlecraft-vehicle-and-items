@@ -14,9 +14,9 @@ public class ModBlockEntities {
             BattlecraftVehicleAndItems.MOD_ID
     );
 
-    public static final RegistryObject<BlockEntityType<VehicleSpawnBlockEntity>> EXAMPLE_VEHICLE_SPAWN_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("example_vehicle_spawn_block_entity",
+    public static final RegistryObject<BlockEntityType<VehicleSpawnBlockEntity>> VEHICLE_SPAWN_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("vehicle_spawn_block_entity",
                     () -> BlockEntityType.Builder.of(VehicleSpawnBlockEntity::new,
-                                    ModBlocks.EXAMPLE_VEHICLE_SPAWN_BLOCK.get())
+                                    ModBlocks.VEHICLE_SPAWN_BLOCK.get())
                             .build(null));
 }

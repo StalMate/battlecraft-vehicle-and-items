@@ -18,13 +18,14 @@ public class ModBlocks {
             BattlecraftVehicleAndItems.MOD_ID
     );
 
-    public static final RegistryObject<Block> EXAMPLE_VEHICLE_SPAWN_BLOCK = BLOCKS.register(
-            "example_vehicle_spawn_block",
+    public static final RegistryObject<Block> VEHICLE_SPAWN_BLOCK = BLOCKS.register(
+            "vehicle_spawn_block",
             () -> new VehicleSpawnBlock(BlockBehaviour.Properties.of()
                     .strength(3.0f, 6.0f)
                     .sound(SoundType.METAL)
                     .lightLevel(state -> 0)
                     .pushReaction(PushReaction.BLOCK)
+                    .noOcclusion()
             )
     );
 }

@@ -12,6 +12,7 @@ import com.battlecraft.vehicleanditems.entity.blocks.VehicleSpawnBlockEntity;
 import com.battlecraft.vehicleanditems.models.blocks.VehicleSpawnBlockModel;
 import com.battlecraft.vehicleanditems.renderers.blocks.components.ProgressBarRendererComponent;
 
+
 public class VehicleSpawnBlockRenderer extends GeoBlockRenderer<VehicleSpawnBlockEntity> {
     private final ProgressBarRendererComponent progressBarRenderer = new ProgressBarRendererComponent(1f, 0.1f, 1.5f);
 

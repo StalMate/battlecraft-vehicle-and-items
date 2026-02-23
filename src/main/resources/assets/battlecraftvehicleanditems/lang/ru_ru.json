@@ -1,4 +1,6 @@
 {
-  "block.battlecraftvehicleanditems.example_vehicle_spawn_block": "Блок спавка тестовой техники",
-  "creativetab.battlecraftvehicleanditems.vehicle_tab": "Battlecraft: Транспорт"
+  "creativetab.battlecraftvehicleanditems.vehicle_tab": "Battlecraft: Транспорт",
+
+  "battlecraftvehicleanditems.subtitle.spawnblock_open": "Звук открутия блока спавна техники",
+  "block.battlecraftvehicleanditems.vehicle_spawn_block": "Блок спавка техники"
 }

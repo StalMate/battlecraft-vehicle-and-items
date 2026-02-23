@@ -15,8 +15,8 @@ public class ModItems {
             BattlecraftVehicleAndItems.MOD_ID
     );
 
-    public static final RegistryObject<Item> EXAMPLE_VEHICLE_SPAWN_BLOCK_ITEM = ITEMS.register(
-            "example_vehicle_spawn_block",
+    public static final RegistryObject<Item> VEHICLE_SPAWN_BLOCK_ITEM = ITEMS.register(
+            "vehicle_spawn_block",
             () -> new VehicleSpawnBlockItem(new Item.Properties()
                     .stacksTo(64)
                     .fireResistant()

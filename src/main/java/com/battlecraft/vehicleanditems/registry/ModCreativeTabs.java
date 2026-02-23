@@ -20,9 +20,9 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("creativetab." + BattlecraftVehicleAndItems.MOD_ID + ".vehicle_tab"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModItems.EXAMPLE_VEHICLE_SPAWN_BLOCK_ITEM.get());
+                        output.accept(ModItems.VEHICLE_SPAWN_BLOCK_ITEM.get());
                     })
-                    .icon(() -> new ItemStack(ModItems.EXAMPLE_VEHICLE_SPAWN_BLOCK_ITEM.get()))
+                    .icon(() -> new ItemStack(ModItems.VEHICLE_SPAWN_BLOCK_ITEM.get()))
                     .build()
     );
 }

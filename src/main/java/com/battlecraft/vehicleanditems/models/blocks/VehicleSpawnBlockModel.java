@@ -19,6 +19,6 @@ public class VehicleSpawnBlockModel extends GeoModel<VehicleSpawnBlockEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(VehicleSpawnBlockEntity animatable) {
-        return new ResourceLocation(BattlecraftVehicleAndItems.MOD_ID, "animations/block/vehicle_spawn_block.animation.json");
+        return new ResourceLocation(BattlecraftVehicleAndItems.MOD_ID, "animations/block/vehicle_spawn_block.json");
     }
 }

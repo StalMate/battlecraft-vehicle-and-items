@@ -1,0 +1,20 @@
+{
+  "spawnblock.open": {
+    "subtitle": "battlecraftvehicleanditems.subtitle.spawnblock_open",
+    "sounds": [
+      {
+        "name": "battlecraftvehicleanditems:spawnblock/open",
+        "stream": false
+      }
+    ]
+  },
+  "spawnblock.wait": {
+    "subtitle": "battlecraftvehicleanditems.subtitle.spawnblock_wait",
+    "sounds": [
+      {
+        "name": "battlecraftvehicleanditems:spawnblock/wait",
+        "stream": false
+      }
+    ]
+  }
+}

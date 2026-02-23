@@ -11,10 +11,10 @@ public class ProgressBarComponent {
         this.maxProgress = maxProgress;
     }
 
-    public void onLoad(Level level) {
-        if (!isInit()) {
-            startTime = level.getGameTime();
-        }
+    public void init(Level level) {
+        if (isInit()) return;
+
+        startTime = level.getGameTime();
     }
 
     public boolean isInit() {
@@ -23,11 +23,12 @@ public class ProgressBarComponent {
 
     public boolean isFinished(Level level) {
         if (!isInit()) return false;
+
         return level.getGameTime() - startTime >= maxProgress;
     }
 
     public float getProgress(Level level, float partialTick) {
-        if (level == null || !isInit()) return 0f;
+        if (!isInit()) return 0f;
 
         float elapsed = (level.getGameTime() - startTime) + partialTick;
         return Math.min(elapsed / maxProgress, 1f);
